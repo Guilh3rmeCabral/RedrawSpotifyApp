@@ -1,51 +1,59 @@
 import React from 'react';
-import { 
+import {
   StyleSheet,
   View,
   Image,
   Text,
-  Title,
   TouchableOpacity,
 } from 'react-native';
 
 import fundo from '../../assets/fundo.png';
 import Spotify from '../../assets/spotify.svg'
 
-export default function GetStarted() {
- return (
-   <View style={styles.container}>
-        <Image style={styles.fundo} source={fundo} />
-        <Spotify style={styles.logo}/>
 
-        <View style={styles.titulos}>
-          <Text style={styles.tituloPrincipal}>Enjoy listening to music</Text>
-          <Text style={styles.subTitulo}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis enim purus sed phasellus. Cursus ornare id scelerisque aliquam.</Text>
 
-          <TouchableOpacity style={styles.btnGetStarted}>
-              <Text style={styles.btnName}>Get Started</Text>
-          </TouchableOpacity>
-        </View>
-   </View>
+export default function GetStarted({ navigation }) {
+  const registerOrSingUp = () => {
+    navigation.navigate({name: "RegisterOrSignup"})
+  }
+
+  return (
+    <View style={styles.container}>
+      <Image style={styles.fundo} source={fundo} />
+      <Spotify style={styles.logo} />
+
+      <View style={styles.titulos}>
+        <Text style={styles.tituloPrincipal}>Enjoy listening to music</Text>
+        <Text style={styles.subTitulo}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis enim purus sed phasellus. Cursus ornare id scelerisque aliquam.</Text>
+
+        <TouchableOpacity 
+          style={styles.btnGetStarted}
+          onPress={() => registerOrSingUp()}
+        >
+          <Text style={styles.btnName}>Get Started</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container : {
+  container: {
     alignItems: 'center'
   },
-  fundo : {
+  fundo: {
     position: 'absolute',
     width: 450,
     height: 900,
   },
-  logo : {
+  logo: {
     marginTop: 50,
   },
-  titulos : {
-    marginTop: 480,
+  titulos: {
+    marginTop: 460,
     alignItems: 'center'
   },
-  tituloPrincipal : {
+  tituloPrincipal: {
     textAlign: 'center',
     color: '#DADADA',
     lineHeight: 50,
@@ -62,7 +70,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     width: 400
   },
-  btnGetStarted : {
+  btnGetStarted: {
     marginTop: 30,
     backgroundColor: '#42C83C',
     height: 92,
@@ -71,7 +79,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 30
   },
-  btnName : {
+  btnName: {
     fontSize: 22,
     fontWeight: '700',
     textTransform: 'capitalize',
