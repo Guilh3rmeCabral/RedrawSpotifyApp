@@ -9,6 +9,13 @@ import{
 } from '@expo-google-fonts/poppins'
 import AppLoading from 'expo-app-loading';
 
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import GetStarted from './src/components/GetStarted';
+import RegisterOrSignup from './src/components/RegisterOrSignup';
+
+const Stack = createStackNavigator();
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
@@ -21,6 +28,12 @@ export default function App() {
     <AppLoading/>
   }
   return (
-    <Home/>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="GetStarted" component={GetStarted}/>
+        <Stack.Screen name="RegisterOrSignup" component={RegisterOrSignup} />
+      </Stack.Navigator>
+      <StatusBar style='light'/>
+    </NavigationContainer>
   );
 }
