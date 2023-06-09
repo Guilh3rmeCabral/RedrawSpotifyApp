@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import Spotify from '../../assets/spotify.svg';
 import billie from '../../assets/billie.png';
-import Vetor1 from '../../assets/vetorRS1.svg';
-import Vetor2 from '../../assets/vetorRS2.svg';
+import efeitoTop from '../../assets/efeitoOndaTop.png';
+import efeitoBottom from '../../assets/efeitoOndaBottom.png';
 
 export default function RegisterOrSignup() {
     return (
@@ -29,7 +29,10 @@ export default function RegisterOrSignup() {
                 </TouchableOpacity>
             </View>
 
+
+            <Image style={styles.efeitoTop} source={efeitoTop} />
             <Image style={styles.billie} source={billie} />
+            <Image style={styles.efeitoBottom} source={efeitoBottom} />
         </View>
     );
 }
@@ -67,7 +70,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginTop: 30
+        marginTop: 30,
+        zIndex: 10
     },
     btnRegister: { 
         backgroundColor: '#42C83C',
@@ -90,9 +94,18 @@ const styles = StyleSheet.create({
         fontWeight: '700'
     },
     billie: {
+        position: 'absolute',
         right: 50,
-        bottom: 85,
-        position: 'relative'
+        bottom: 150,
+    },
+    efeitoTop : {
+        position: 'absolute',
+        right: 0
+    },
+    efeitoBottom: {
+        position: 'absolute',
+        top: 545,
+        right: 0.8
     }
     
 })
