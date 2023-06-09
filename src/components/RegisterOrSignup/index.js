@@ -5,7 +5,11 @@ import billie from '../../assets/billie.png';
 import efeitoTop from '../../assets/efeitoOndaTop.png';
 import efeitoBottom from '../../assets/efeitoOndaBottom.png';
 
-export default function RegisterOrSignup() {
+export default function RegisterOrSignup({navigation}) {
+
+    const signIn = () => {
+        navigation.navigate({name: "SignIn"})
+    }
     return (
         <View style={styles.container}>
             <Spotify style={styles.logo} />
@@ -24,6 +28,7 @@ export default function RegisterOrSignup() {
 
                 <TouchableOpacity 
                     style={styles.btnSign}
+                    onPress={() => signIn()}
                 >
                     <Text style={styles.btnName}>Sign in</Text>
                 </TouchableOpacity>
@@ -40,7 +45,7 @@ export default function RegisterOrSignup() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#1C1B1B',
-        height: 1000,
+        height: "100%",
         alignItems: 'center',
     },
     logo: {
@@ -96,7 +101,7 @@ const styles = StyleSheet.create({
     billie: {
         position: 'absolute',
         right: 50,
-        bottom: 150,
+        bottom: 0.1,
     },
     efeitoTop : {
         position: 'absolute',
