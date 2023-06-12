@@ -6,9 +6,13 @@ import Apple from '../../assets/apple.svg';
 import { TextInput } from 'react-native-gesture-handler';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function SignIn() {
+export default function SignIn({navigation}) {
     const registerNow = () => {
-        console.log('Oi')
+        navigation.navigate({name: "Register"})
+    }
+
+    const homePage = () => {
+        console.log('home page')
     }
     return (
         <View style={styles.container}>
@@ -45,6 +49,7 @@ export default function SignIn() {
 
             <TouchableOpacity
                 style={styles.entrar}
+                onPress={() => homePage()}
             >
                 <Text style={styles.entrarBtn}>Sign In</Text>
             </TouchableOpacity>
