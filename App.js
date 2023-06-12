@@ -13,6 +13,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import GetStarted from './src/components/GetStarted';
 import RegisterOrSignup from './src/components/RegisterOrSignup';
+import SignIn from './src/components/SignIn';
+import Register from './src/components/Register';
 
 const Stack = createStackNavigator();
 
@@ -32,6 +34,8 @@ export default function App() {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="GetStarted" component={GetStarted}/>
         <Stack.Screen name="RegisterOrSignup" component={RegisterOrSignup} />
+        <Stack.Screen name="SignIn" component={SignIn}/>
+        <Stack.Screen name="Register" component={Register}/>
       </Stack.Navigator>
       <StatusBar style='light'/>
     </NavigationContainer>
