@@ -10,6 +10,11 @@ export default function RegisterOrSignup({navigation}) {
     const signIn = () => {
         navigation.navigate({name: "SignIn"})
     }
+
+    const register = () => {
+        navigation.navigate({name: "Register"})
+    }
+
     return (
         <View style={styles.container}>
             <Spotify style={styles.logo} />
@@ -22,6 +27,7 @@ export default function RegisterOrSignup({navigation}) {
             <View style={styles.gpBtn}>
                 <TouchableOpacity
                     style={styles.btnRegister}
+                    onPress={() => register()}
                 >
                     <Text style={styles.btnName}>Register</Text>
                 </TouchableOpacity>
