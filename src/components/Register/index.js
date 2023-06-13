@@ -11,9 +11,10 @@ import SpotifyP from '../../assets/spotifyP.svg';
 import Google from '../../assets/google.svg';
 import Apple from '../../assets/apple.svg';
 
-export default function Register() {
+export default function Register({navigation}) {
 
     const signIn = () => {
+        navigation.navigate({name: "SignIn"})
         console.log('SignIn')
     }
     return (
