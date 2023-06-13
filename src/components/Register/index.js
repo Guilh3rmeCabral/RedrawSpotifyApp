@@ -15,7 +15,6 @@ export default function Register({navigation}) {
 
     const signIn = () => {
         navigation.navigate({name: "SignIn"})
-        console.log('SignIn')
     }
     return (
         <View style={styles.container}>
