@@ -12,7 +12,7 @@ export default function SignIn({navigation}) {
     }
 
     const homePage = () => {
-        console.log('home page')
+        navigation.navigate({name: "HomePage"})
     }
     return (
         <View style={styles.container}>
