@@ -9,12 +9,13 @@ import{
 } from '@expo-google-fonts/poppins'
 import AppLoading from 'expo-app-loading';
 
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import GetStarted from './src/components/GetStarted';
 import RegisterOrSignup from './src/components/RegisterOrSignup';
 import SignIn from './src/components/SignIn';
 import Register from './src/components/Register';
+import HomePage from './src/components/HomePage';
 
 const Stack = createStackNavigator();
 
@@ -31,11 +32,16 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator screenOptions={{headerShown: false,
+      //  gestureEnabled: true,
+      //   gestureDirection: "horizontal",
+      // cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
+    }}>
         <Stack.Screen name="GetStarted" component={GetStarted}/>
         <Stack.Screen name="RegisterOrSignup" component={RegisterOrSignup} />
         <Stack.Screen name="SignIn" component={SignIn}/>
         <Stack.Screen name="Register" component={Register}/>
+        <Stack.Screen name="HomePage" component={HomePage}/>
       </Stack.Navigator>
       <StatusBar style='light'/>
     </NavigationContainer>
